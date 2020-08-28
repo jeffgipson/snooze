@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Signups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Photo</th>
+      <th>Selfie</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @signups.each do |signup| %>
+      <tr>
+        <td><%= signup.first_name %></td>
+        <td><%= signup.last_name %></td>
+        <td><%= signup.email %></td>
+        <td><%= signup.address %></td>
+        <td><%= signup.address2 %></td>
+        <td><%= signup.city %></td>
+        <td><%= signup.state %></td>
+        <td><%= signup.zip %></td>
+        <td><%= signup.phone %></td>
+        <td><%= signup.photo_id %></td>
+        <td><%= signup.selfie %></td>
+        <td><%= link_to 'Show', signup %></td>
+        <td><%= link_to 'Edit', edit_signup_path(signup) %></td>
+        <td><%= link_to 'Destroy', signup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Signup', new_signup_path %>

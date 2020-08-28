@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @signup.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @signup.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @signup.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @signup.address %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @signup.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @signup.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @signup.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @signup.zip %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @signup.phone %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @signup.photo_id %>
+</p>
+
+<p>
+  <strong>Selfie:</strong>
+  <%= @signup.selfie %>
+</p>
+
+<%= link_to 'Edit', edit_signup_path(@signup) %> |
+<%= link_to 'Back', signups_path %>
