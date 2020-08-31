@@ -1,17 +1,1505 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Snooze</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  </head>
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Title and description ================================================== -->
+  <title>Snoozze has your back! Sleep better faster</title>
+  <meta name="description" content="Snoozze mattress has your back! Sleep better faster. No pushy sales people! Shop how you want, when you want and get a new mattress as fast as you want! Plus with low monthly payments*. Try at a local store or buy online!">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Snoozze has your back! Sleep better faster">
+  <meta property="og:description" content="Snoozze mattress has your back! Sleep better faster. No pushy sales people! Shop how you want, when you want and get a new mattress as fast as you want! Plus with low monthly payments*. Try at a local store or buy online!">
+  <meta property="og:url" content="https://snoozzemattress.com/">
+  <meta property="og:site_name" content="Snoozze">
+  <link rel="canonical" href="https://snoozzemattress.com/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- fonts -->
+
+  <script type="text/javascript">
+      WebFontConfig = {
+          google: {
+              families: [
+
+
+                  'Nunito:100,200,300,400,500,600,700,800,900'
+
+              ]
+          }
+      };
+
+      (function () {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+              '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+      })();
+  </script>
+
+
+  <!-- Styles -->
+  <link href="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/vendor.min.css?v=1631323766942314957" rel="stylesheet" type="text/css" media="all"/>
+  <link href="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/theme-styles.scss.css?v=3483471709985778676" rel="stylesheet" type="text/css" media="all"/>
+  <link href="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/theme-styles-responsive.scss.css?v=6934862161908493966" rel="stylesheet" type="text/css" media="all"/>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+
+  <!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>-->
+  <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+
+  <!-- Header hook for plugins ================================ -->
+
+  <style id="shopify-dynamic-checkout-cart">@media screen and (min-width: 750px) {
+    #dynamic-checkout-cart {
+      min-height: 50px;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    #dynamic-checkout-cart {
+      min-height: 120px;
+    }
+  }
+  </style>
+  <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script>
+
+      Shopify.productOptionsMap = {};
+      Shopify.quickViewOptionsMap = {};
+
+      Shopify.updateOptionsInSelector = function (selectorIndex, wrapperSlt) {
+          Shopify.optionsMap = wrapperSlt === '.product' ? Shopify.productOptionsMap : Shopify.quickViewOptionsMap;
+
+          switch (selectorIndex) {
+              case 0:
+                  var key = 'root';
+                  var selector = $(wrapperSlt + ' .single-option-selector:eq(0)');
+                  break;
+              case 1:
+                  var key = $(wrapperSlt + ' .single-option-selector:eq(0)').val();
+                  var selector = $(wrapperSlt + ' .single-option-selector:eq(1)');
+                  break;
+              case 2:
+                  var key = $(wrapperSlt + ' .single-option-selector:eq(0)').val();
+                  key += ' / ' + $(wrapperSlt + ' .single-option-selector:eq(1)').val();
+                  var selector = $(wrapperSlt + ' .single-option-selector:eq(2)');
+          }
+
+          var initialValue = selector.val();
+
+          selector.empty();
+
+          var availableOptions = Shopify.optionsMap[key];
+
+          if (availableOptions && availableOptions.length) {
+              for (var i = 0; i < availableOptions.length; i++) {
+                  var option = availableOptions[i];
+
+                  var newOption = $('<option></option>').val(option).html(option);
+
+                  selector.append(newOption);
+              }
+
+              $(wrapperSlt + ' .swatch[data-option-index="' + selectorIndex + '"] .swatch-element').each(function () {
+                  if ($.inArray($(this).attr('data-value'), availableOptions) !== -1) {
+                      $(this).removeClass('soldout').find(':radio').removeAttr('disabled', 'disabled').removeAttr('checked');
+                  } else {
+                      $(this).addClass('soldout').find(':radio').removeAttr('checked').attr('disabled', 'disabled');
+                  }
+              });
+
+              if ($.inArray(initialValue, availableOptions) !== -1) {
+                  selector.val(initialValue);
+              }
+
+              selector.trigger('change');
+          }
+      };
+
+      Shopify.linkOptionSelectors = function (product, wrapperSlt) {
+          // Building our mapping object.
+          Shopify.optionsMap = wrapperSlt === '.product' ? Shopify.productOptionsMap : Shopify.quickViewOptionsMap;
+
+          for (var i = 0; i < product.variants.length; i++) {
+              var variant = product.variants[i];
+
+              if (variant.available) {
+                  // Gathering values for the 1st drop-down.
+                  Shopify.optionsMap['root'] = Shopify.optionsMap['root'] || [];
+
+                  Shopify.optionsMap['root'].push(variant.option1);
+                  Shopify.optionsMap['root'] = Shopify.uniq(Shopify.optionsMap['root']);
+
+                  // Gathering values for the 2nd drop-down.
+                  if (product.options.length > 1) {
+                      var key = variant.option1;
+                      Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
+                      Shopify.optionsMap[key].push(variant.option2);
+                      Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
+                  }
+
+                  // Gathering values for the 3rd drop-down.
+                  if (product.options.length === 3) {
+                      var key = variant.option1 + ' / ' + variant.option2;
+                      Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
+                      Shopify.optionsMap[key].push(variant.option3);
+                      Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
+                  }
+              }
+          }
+          // Update options right away.
+          Shopify.updateOptionsInSelector(0, wrapperSlt);
+
+          if (product.options.length > 1) Shopify.updateOptionsInSelector(1, wrapperSlt);
+          if (product.options.length === 3) Shopify.updateOptionsInSelector(2, wrapperSlt);
+
+          // When there is an update in the first dropdown.
+          $(wrapperSlt + " .single-option-selector:eq(0)").change(function () {
+              Shopify.updateOptionsInSelector(1, wrapperSlt);
+              if (product.options.length === 3) Shopify.updateOptionsInSelector(2, wrapperSlt);
+              return true;
+          });
+
+          // When there is an update in the second dropdown.
+          $(wrapperSlt + " .single-option-selector:eq(1)").change(function () {
+              if (product.options.length === 3) Shopify.updateOptionsInSelector(2, wrapperSlt);
+              return true;
+          });
+      };
+  </script>
+  <!--   This area was rendered by Stores App -->
+  <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/globostores.scss.css?v=14637841027040554207" type="text/css" media="all">
+  <script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
+  <script>
+      var gbStoreProduct = null;
+      var gbStoreOrder = [];
+      var StoresApp = StoresApp || {};
+      StoresApp.shopUrl = 'snoozze.myshopify.com';
+      var gbStoreSetting = {
+          "design": {
+              "color": {
+                  "textOutOfStock": "#ff0000",
+                  "textInStock": "#0000ff",
+                  "textShippingMethod": "#000000",
+                  "shippingMethodBackground": "#fbfbfb",
+                  "shippingMethodHover": "#dbe78e",
+                  "textShippingMethodHover": "000000",
+                  "textShippingMethodSelected": "000000",
+                  "shippingMethodSelected": "#f5deb3",
+                  "calendarBackground": "#ffffff",
+                  "dayHover": "#b1dcfb",
+                  "daySelected": "#0089ec",
+                  "calendarText": "#000000",
+                  "textDayHover": "#000000",
+                  "textDaySelected": "#000000",
+                  "timeSlot": "#ffffff",
+                  "timeSlotHover": "#b1dcfb",
+                  "timeSlotSelected": "#0089ec",
+                  "textTimeSlot": "#000000",
+                  "textTimeSlotHover": "#000000",
+                  "textTimeSlotSelected": "#000000"
+              }, "items": ["shipping", "storePickup", "localDelivery"]
+          },
+          "storePickup": {
+              "status": true,
+              "filter": {"status": true, "name": true, "tag": true, "group": true, "radius": true},
+              "pickup_condition": {
+                  "subtotal": {"greater": null, "less": null},
+                  "operator": "AND",
+                  "quantity": {"greater": null, "less": null},
+                  "enable_pickup": "1"
+              }
+          },
+          "general": {
+              "googleMap": {
+                  "status": false,
+                  "apiKey": null,
+                  "style": "Standard",
+                  "zoom": "12",
+                  "pinIcon": "https:\/\/stores.globosoftware.net\/images\/location-512.png",
+                  "distance_length_unit": "m"
+              },
+              "inventory": {
+                  "hideOutOfStockLocations": false,
+                  "onlyShowOutOfStockOrInStock": false,
+                  "showUnlinkedLocations": false,
+                  "useInventoryThreshold": false,
+                  "outOfStock": {"number": 0, "text": "Out of Stock"},
+                  "lowStock": {"number": 5, "text": "Low Stock"},
+                  "highStock": {"number": null, "text": "High Stock"},
+                  "noInventoryFound": {"show": false, "text": null}
+              }
+          },
+          "localDelivery": {
+              "status": true,
+              "validation": "2",
+              "lag_timeL": "0",
+              "listZipCode": null,
+              "lag_time": "1",
+              "distance": "50",
+              "distanceUnit": "m"
+          },
+          "shipping": {"status": true}
+      };
+      var gbStoreLanguages = [{
+          "name": "English", "code": "en", "translate": {
+              "widget": {
+                  "searchByNamePlaceholder": "Example: \"New York\"",
+                  "enterPostalCodePlaceholder": "Enter your postal code ...",
+                  "enterPostalCode": "Enter your postal code into the field below to check if you are eligible for local delivery:",
+                  "dateLocalDeliveryPlaceholder": "Choose the delivery date.",
+                  "dateLocalDeliveryRequiredMessage": "Please select a delivery date.",
+                  "noStoreFound": "No stores were found.",
+                  "shippingText": "Shipping",
+                  "storePickupText": "Store Pickup",
+                  "localDeliveryText": "Local Delivery",
+                  "findLocationText": "Find location button",
+                  "findLocationPlaceholder": "Find my location",
+                  "filterByGroup": "Filter by group",
+                  "filterByTag": "Filter by tag",
+                  "moreInfoText": "More information",
+                  "dateTimePlaceholder": "Choose datetime",
+                  "pickupStoreRequiredMessage": "Please pickup a store",
+                  "pickupTimeRequiredMessage": "Please pickup a store",
+                  "popupGetDirection": "Get Directions",
+                  "popupPhone": "Phone",
+                  "popupFax": "Fax",
+                  "popupEmail": "Email",
+                  "popupNote": "Note",
+                  "popupOpenHour": "Opening hours",
+                  "popupStoreClose": "Store Close",
+                  "searchText": "Search button",
+                  "mondayText": "Monday",
+                  "tuesdayText": "Tuesday",
+                  "wednesdayText": "Wednesday",
+                  "thursdayText": "Thursday",
+                  "fridayText": "Friday",
+                  "saturdayText": "Saturday",
+                  "sundayText": "Sunday",
+                  "zipCodeRequiredMessage": "Please enter a valid zipcode",
+                  "deliveryNotAvailable": "Sorry, delivery is not available in your area.",
+                  "deliveryAvailable": "Great! You are eligible for delivery."
+              },
+              "checkout": {
+                  "contact": {"shipping_address_title": "Pickup information"},
+                  "thank_you": {"marker": {"shipping": "Pickup address"}, "shipping_address_title": "Pickup address"},
+                  "general": {"continue_to_shipping_method": "Continue"},
+                  "order_summary": {"free_shipping_discount_label": "Free pickup", "shipping_label": "Store Pickup"},
+                  "shipping": {
+                      "title": "Store Pickup",
+                      "waiting_on_rate_notice": "Please wait while we fetch available pickup rates...",
+                      "no_rates_for_cart_or_destination_notice": "Pickup is not available for your cart or destination.",
+                      "no_rates_for_country_notice": "We don't offer pickups in .",
+                      "please_enter_your_shipping_information_notice": "Please go back to the shopping cart page and choose a pickup location."
+                  },
+                  "payment": {
+                      "same_billing_address_label": "Please use the option below \u2b07",
+                      "different_billing_address_label": "Use a different billing address"
+                  }
+              }
+          }
+      }];
+      var gbStoreProductDefaultStorePickup = {
+          "productId": 4666518143107,
+          "variantId": 32752451879043,
+          "title": "Store Pickup",
+          "handle": "globo-store-pickup"
+      };
+      var gbStoreProductDefaultLocalDelivery = {
+          "productId": 4666518306947,
+          "variantId": 32752452042883,
+          "title": "Local Delivery",
+          "handle": "globo-local-delivery"
+      };
+      var gbStoreLanguageDefault = "en";
+      StoresApp.locale = StoresApp.locale || "en";
+      StoresApp.shopGoogleMapStyle = '[]';
+      StoresApp.defaultLat = 21.046895;
+      StoresApp.defaultLong = 105.788200;
+      StoresApp.zoomLevel = "12";
+      StoresApp.distance_unit = "m";
+      StoresApp.hasStoreIcon = true;
+      StoresApp.item_count = 0;
+      StoresApp.total_price = 0;
+      StoresApp.translation_6 = "Not found";
+      StoresApp.defaultIcon = 'https://stores.globosoftware.net/images/location-512.png';
+      StoresApp.isCartPage = false;
+      StoresApp.enable_pickup = 1;
+      StoresApp.translation = {
+          "searchByNamePlaceholder": "Example: \"New York\"",
+          "enterPostalCodePlaceholder": "Enter your postal code ...",
+          "enterPostalCode": "Enter your postal code into the field below to check if you are eligible for local delivery:",
+          "dateLocalDeliveryPlaceholder": "Choose the delivery date.",
+          "dateLocalDeliveryRequiredMessage": "Please select a delivery date.",
+          "noStoreFound": "No stores were found.",
+          "shippingText": "Shipping",
+          "storePickupText": "Store Pickup",
+          "localDeliveryText": "Local Delivery",
+          "findLocationText": "Find location button",
+          "findLocationPlaceholder": "Find my location",
+          "filterByGroup": "Filter by group",
+          "filterByTag": "Filter by tag",
+          "moreInfoText": "More information",
+          "dateTimePlaceholder": "Choose datetime",
+          "pickupStoreRequiredMessage": "Please pickup a store",
+          "pickupTimeRequiredMessage": "Please pickup a store",
+          "popupGetDirection": "Get Directions",
+          "popupPhone": "Phone",
+          "popupFax": "Fax",
+          "popupEmail": "Email",
+          "popupNote": "Note",
+          "popupOpenHour": "Opening hours",
+          "popupStoreClose": "Store Close",
+          "searchText": "Search button",
+          "mondayText": "Monday",
+          "tuesdayText": "Tuesday",
+          "wednesdayText": "Wednesday",
+          "thursdayText": "Thursday",
+          "fridayText": "Friday",
+          "saturdayText": "Saturday",
+          "sundayText": "Sunday",
+          "zipCodeRequiredMessage": "Please enter a valid zipcode",
+          "deliveryNotAvailable": "Sorry, delivery is not available in your area.",
+          "deliveryAvailable": "Great! You are eligible for delivery."
+      };
+      StoresApp.settings = {
+          "subtotal": {"greater": null, "less": null},
+          "operator": "AND",
+          "quantity": {"greater": null, "less": null},
+          "enable_pickup": "1"
+      };
+      StoresApp.notCheckZipCode = false;
+  </script>
+  <script>
+      gbStoreProductDefaultStorePickup = {"productId": 4666518143107, "variantId": 32752451879043};
+      gbStoreProductDefaultLocalDelivery = {"productId": 4666518306947, "variantId": 33502463787139}
+  </script>
+  <!-- End Area -->
+</head>
+
+<body id="snoozze-has-your-back-sleep-better-faster" class=" body-full template-index">
+  <h1 style="display: none">Snoozze has your back! Sleep better faster</h1>
+  <div class="wrapper-header wrapper_header_parallax">
+  <div id="shopify-section-header-parallax" class="shopify-section">
+    <header class="site-header header-parallax" role="banner">
+      <div class="header-top">
+        <div class="container-padd60">
+          <div class="top-message">
+            <p>
+              <span>Save big with 0% for 24 mths*</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="icon-nav close-menu-mb" title="Menu Mobile Icon" data-menu-mb-toogle>
+        <span class="icon-line"></span>
+      </a>
+
+      <div class="header-bottom" data-sticky-mb>
+        <div class="container-padd60">
+          <div class="header-mb">
+            <div class="header-mb-left header-mb-items">
+              <div class="hamburger-icon svg-mb">
+                <a href="#" class="icon-nav" title="Menu Mobile Icon" data-menu-mb-toogle>
+                  <span class="icon-line"></span>
+                </a>
+              </div>
+
+              <div class="search-mb svg-mb">
+                <a href="#" title="Search Icon" class="icon-search" data-search-mobile-toggle>
+                  <svg data-icon="search" viewBox="0 0 512 512" width="100%" height="100%">
+                    <path d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z"></path>
+                  </svg>
+                </a>
+
+                <a href="javascript:void(0)" title="close" class="close close-search">
+                  <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+                    <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+                  </svg>
+                </a>
+
+                <div class="search-form" data-ajax-search>
+                  <div class="header-search">
+                    <div class="header-search__form">
+                      <a href="javascript:void(0)" title="close" class="close close-search">
+                        <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+                          <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+                        </svg>
+                      </a>
+
+                      <form action="/search" method="get" class="search-bar" role="search">
+                        <input type="hidden" name="type" value="product">
+
+                        <input type="search" name="q"
+
+                               placeholder="Search"
+                               class="input-group-field header-search__input" aria-label="Search Site" autocomplete="off">
+
+                        <button type="submit" class="btn icon-search">
+                          <svg data-icon="search" viewBox="0 0 512 512" width="100%" height="100%">
+                            <path d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z"></path>
+                          </svg>
+                        </button>
+                      </form>
+                    </div>
+
+                    <div class="quickSearchResultsWrap" style="display: none;">
+                      <div class="custom-scrollbar">
+                        <div class="container">
+
+
+                          <div class="header-search__results-wrapper"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="header-mb-middle header-mb-items">
+              <div class="header-logo">
+                <a class="logo-img" href="/" title="Logo">
+                  <img data-src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/logo-file.png?v=1576597361"
+                       src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/logo-file.png?v=1576597361"
+                       alt="Snoozze" itemprop="logo" class="lazyautosizes lazyloade" data-sizes="auto">
+                </a>
+              </div>
+            </div>
+
+            <div class="header-mb-right header-mb-items">
+              <div class="acc-mb svg-mb">
+                <a href="#" title="User Icon" class="icon-user" data-user-mobile-toggle>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="lnr-user" viewBox="0 0 1024 1024" width="100%" height="100%">
+                    <title>user</title>
+                    <path class="path1" d="M486.4 563.2c-155.275 0-281.6-126.325-281.6-281.6s126.325-281.6 281.6-281.6 281.6 126.325 281.6 281.6-126.325 281.6-281.6 281.6zM486.4 51.2c-127.043 0-230.4 103.357-230.4 230.4s103.357 230.4 230.4 230.4c127.042 0 230.4-103.357 230.4-230.4s-103.358-230.4-230.4-230.4z"/>
+                    <path class="path2" d="M896 1024h-819.2c-42.347 0-76.8-34.451-76.8-76.8 0-3.485 0.712-86.285 62.72-168.96 36.094-48.126 85.514-86.36 146.883-113.634 74.957-33.314 168.085-50.206 276.797-50.206 108.71 0 201.838 16.893 276.797 50.206 61.37 27.275 110.789 65.507 146.883 113.634 62.008 82.675 62.72 165.475 62.72 168.96 0 42.349-34.451 76.8-76.8 76.8zM486.4 665.6c-178.52 0-310.267 48.789-381 141.093-53.011 69.174-54.195 139.904-54.2 140.61 0 14.013 11.485 25.498 25.6 25.498h819.2c14.115 0 25.6-11.485 25.6-25.6-0.006-0.603-1.189-71.333-54.198-140.507-70.734-92.304-202.483-141.093-381.002-141.093z"/>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="cart-icon svg-mb">
+                <a href="#" title="Cart Icon" data-cart-toggle>
+                  <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                    <path class="path1" d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4S512 865.136 512 921.6 466.064 1024 409.6 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"></path>
+                    <path class="path2" d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4S711.536 819.2 768 819.2s102.4 45.936 102.4 102.4S824.464 1024 768 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"></path>
+                    <path class="path3" d="M898.021 228.688C885.162 213.507 865.763 204.8 844.8 204.8H217.954l-5.085-30.506C206.149 133.979 168.871 102.4 128 102.4H76.8c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6H128c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395C254.65 736.421 291.929 768 332.799 768h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zm-35.69 48.006l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z"></path></svg>
+
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="is_parallax">
+        <div class="wrapper-header-bt" data-sticky-pc>
+          <div class="container-padd60">
+            <div class="header-panel-bt">
+              <div class="left-header header-items">
+                <div class="header-logo" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="url" content="https://snoozzemattress.com">
+
+                  <a class="logo-img" href="/" title="Logo">
+                    <img itemprop="logo" data-src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/logo-file.png?v=1576597361"
+                         src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/logo-file.png?v=1576597361"
+                         alt="Snoozze" itemprop="logo" class="lazyautosizes lazyloaded" data-sizes="auto">
+
+                  </a>
+                </div>
+              </div>
+
+              <div class="wrapper-navigation">
+                <div class="main-menu jas-mb-style">
+                  <div class="col-12">
+                    <div class="mb-area">
+                      <nav class="nav-bar" role="navigation">
+                        <ul class="site-nav">
+                          <li class="menu-lv-1 item">
+                            <a class="current" href="/">
+                              <span>Home</span>
+                            </a>
+                          </li>
+                          <li class="menu-lv-1 item dropdown mega-menu">
+                            <a class="menu__moblie " href="/pages/start-quiz">
+                              <span>Shop</span>
+                              <span class="icon-dropdown" data-toggle-menu-mb>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                              </span>
+                            </a>
+                            <div class="sub-menu-mobile menu-mb-translate">
+                              <div class="menu-mb-title">
+                <span class="icon-dropdown">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </span>
+
+                                <span>
+  Shop
+</span>
+
+                              </div>
+
+
+                              <div class="site-nav-dropdown style_1">
+                                <div class="container">
+                                  <div class="row">
+
+                                    <div class="col-12 col-xl-9">
+                                      <div class="row" data-masonry='{ "itemSelector": "[data-gridItem]", "columnWidth": ".grid-sizer" }'>
+                                        <div class="grid-sizer"></div>
+
+
+                                        <div data-gridItem class="menu-lv-2 inner dropdown col-12 col-xl-3">
+                                          <!-- Menu level 2 -->
+                                          <a class="menu__moblie" href="/collections" class="current">
+
+<span>
+  Collections
+</span>
+
+
+                                            <span class="icon-dropdown" data-toggle-menu-mb>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </span>
+
+                                          </a>
+
+
+                                          <div class="sub-menu-mobile menu-mb-translate">
+                                            <div class="menu-mb-title">
+                        <span class="icon-dropdown">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </span>
+
+                                              <span>
+  Collections
+</span>
+
+                                            </div>
+
+                                            <ul class="site-nav-dropdown">
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/blue-mattress">
+
+<span>
+  Blue Mattress
+</span>
+
+                                                </a>
+                                              </li>
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/green-mattress">
+
+<span>
+  Green Mattress
+</span>
+
+                                                </a>
+                                              </li>
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/peach-mattress">
+
+<span>
+  Peach Mattress
+</span>
+
+                                                </a>
+                                              </li>
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/grey-mattress">
+
+<span>
+  Grey Mattress
+</span>
+
+                                                </a>
+                                              </li>
+
+                                            </ul>
+                                          </div>
+
+                                        </div>
+
+                                        <div data-gridItem class="menu-lv-2 inner dropdown col-12 col-xl-3">
+                                          <!-- Menu level 2 -->
+                                          <a class="menu__moblie" href="/collections" class="current">
+
+<span>
+  Shop by Firmness
+</span>
+
+
+                                            <span class="icon-dropdown" data-toggle-menu-mb>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </span>
+
+                                          </a>
+
+
+                                          <div class="sub-menu-mobile menu-mb-translate">
+                                            <div class="menu-mb-title">
+                        <span class="icon-dropdown">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </span>
+
+                                              <span>
+  Shop by Firmness
+</span>
+
+                                            </div>
+
+                                            <ul class="site-nav-dropdown">
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/blue-mattress">
+
+<span>
+  Firm
+</span>
+
+                                                </a>
+                                              </li>
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/green-mattress">
+
+<span>
+  Medium
+</span>
+
+                                                </a>
+                                              </li>
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/peach-mattress">
+
+<span>
+  Soft
+</span>
+
+                                                </a>
+                                              </li>
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/collections/grey-mattress">
+
+<span>
+  Super Soft
+</span>
+
+                                                </a>
+                                              </li>
+
+                                            </ul>
+                                          </div>
+
+                                        </div>
+
+                                        <div data-gridItem class="menu-lv-2 inner dropdown col-12 col-xl-3">
+                                          <!-- Menu level 2 -->
+                                          <a class="menu__moblie" href="/" class="current">
+
+<span>
+  Accessories
+</span>
+
+
+                                            <span class="icon-dropdown" data-toggle-menu-mb>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </span>
+
+                                          </a>
+
+
+                                          <div class="sub-menu-mobile menu-mb-translate">
+                                            <div class="menu-mb-title">
+                        <span class="icon-dropdown">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </span>
+
+                                              <span>
+  Accessories
+</span>
+
+                                            </div>
+
+                                            <ul class="site-nav-dropdown">
+
+                                              <!-- Menu level 3 -->
+                                              <li class="menu-lv-3">
+                                                <a href="/" class="current">
+
+<span>
+  Power Base
+</span>
+
+                                                </a>
+                                              </li>
+
+                                            </ul>
+                                          </div>
+
+                                        </div>
+
+                                      </div>
+                                    </div>
+
+
+                                    <div class="col-12 col-xl-3">
+                                      <div class="mega-banner">
+
+
+                                        <div class="mega-col no-feature-product">
+                                          <a class="animate-scale" href="" title="">
+                                            <img src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/toa-heftiba-C9WnRj-CZEk-unsplash_250x.jpg?v=1576599200" alt=""/>
+                                          </a>
+                                        </div>
+
+                                      </div>
+                                    </div>
+
+
+                                  </div>
+
+                                </div>
+                              </div>
+
+
+                            </div>
+
+                          </li>
+
+
+                          <li class="menu-lv-1 item">
+                            <a class="" href="/pages/start-quiz">
+
+<span>
+  Mattress Quiz
+</span>
+
+
+                            </a>
+
+
+                          </li>
+
+
+                          <li class="menu-lv-1 item">
+                            <a class="" href="/pages/contact">
+
+<span>
+  Contact Us
+</span>
+
+
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+
+                      <div class="header-pc" data-header-pc>
+                        <div class="header-links">
+
+
+                          <div class="customer-links">
+
+
+                            <a data-dropdown-user class="acc-links acc-sign-in" id="customer_login_link" href="/account/login">
+                              Sign In
+                            </a>
+                            <a class="acc-links acc-regis" id="customer_register_link" href="/account/register">
+                              Create an account
+                            </a>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="right-header header-items">
+                <div class="nav-search svg-mb">
+                  <a href="#" title="Search Icon" class="icon-search" data-search-mobile-toggle>
+                    <svg data-icon="search" viewBox="0 0 512 512" width="100%" height="100%">
+                      <path d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z"></path>
+                    </svg>
+                  </a>
+
+                  <div class="search-form" data-ajax-search>
+                    <div class="header-search">
+                      <div class="header-search__form">
+                        <a href="javascript:void(0)" title="close" class="close close-search">
+                          <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+                            <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+                          </svg>
+                        </a>
+
+                        <form action="/search" method="get" class="search-bar" role="search">
+                          <input type="hidden" name="type" value="product">
+
+                          <input type="search" name="q"
+
+                                 placeholder="Search"
+                                 class="input-group-field header-search__input" aria-label="Search Site" autocomplete="off">
+
+                          <button type="submit" class="btn icon-search">
+                            <svg data-icon="search" viewBox="0 0 512 512" width="100%" height="100%">
+                              <path d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z"></path>
+                            </svg>
+                          </button>
+                        </form>
+                      </div>
+
+                      <div class="quickSearchResultsWrap" style="display: none;">
+                        <div class="custom-scrollbar">
+                          <div class="container">
+
+
+                            <div class="header-search__results-wrapper"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+                <div class="acc-mb svg-mb">
+                  <a href="#" title="User Icon" class="icon-user" data-user-mobile-toggle>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="lnr-user" viewBox="0 0 1024 1024" width="100%" height="100%">
+                      <title>user</title>
+                      <path class="path1" d="M486.4 563.2c-155.275 0-281.6-126.325-281.6-281.6s126.325-281.6 281.6-281.6 281.6 126.325 281.6 281.6-126.325 281.6-281.6 281.6zM486.4 51.2c-127.043 0-230.4 103.357-230.4 230.4s103.357 230.4 230.4 230.4c127.042 0 230.4-103.357 230.4-230.4s-103.358-230.4-230.4-230.4z"/>
+                      <path class="path2" d="M896 1024h-819.2c-42.347 0-76.8-34.451-76.8-76.8 0-3.485 0.712-86.285 62.72-168.96 36.094-48.126 85.514-86.36 146.883-113.634 74.957-33.314 168.085-50.206 276.797-50.206 108.71 0 201.838 16.893 276.797 50.206 61.37 27.275 110.789 65.507 146.883 113.634 62.008 82.675 62.72 165.475 62.72 168.96 0 42.349-34.451 76.8-76.8 76.8zM486.4 665.6c-178.52 0-310.267 48.789-381 141.093-53.011 69.174-54.195 139.904-54.2 140.61 0 14.013 11.485 25.498 25.6 25.498h819.2c14.115 0 25.6-11.485 25.6-25.6-0.006-0.603-1.189-71.333-54.198-140.507-70.734-92.304-202.483-141.093-381.002-141.093z"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="cart-icon svg-mb" data-cart-header-parallax>
+                  <a href="#" title="Cart Icon" data-cart-toggle>
+
+                    <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                      <path class="path1" d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4S512 865.136 512 921.6 466.064 1024 409.6 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"></path>
+                      <path class="path2" d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4S711.536 819.2 768 819.2s102.4 45.936 102.4 102.4S824.464 1024 768 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"></path>
+                      <path class="path3" d="M898.021 228.688C885.162 213.507 865.763 204.8 844.8 204.8H217.954l-5.085-30.506C206.149 133.979 168.871 102.4 128 102.4H76.8c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6H128c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395C254.65 736.421 291.929 768 332.799 768h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zm-35.69 48.006l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z"></path>
+                    </svg>
+
+
+                    <span class="cartCount" data-cart-count>
+                                0
+                                </span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script>
+        window.fixtop_menu = true;
+
+        var appendPrependMenuMobile = function () {
+            var translateHeaderBlock = $('[data-translate-header]'),
+                headerPc = $('[data-header-pc]'),
+                areaMb = $('.wrapper-navigation .mb-area');
+
+            if (window.innerWidth < 1200) {
+                headerPc.appendTo(areaMb);
+            } else {
+                headerPc.appendTo(translateHeaderBlock);
+            }
+        };
+
+        $(document).ready(function () {
+            appendPrependMenuMobile();
+        });
+
+        var winWidth = $(window).innerWidth();
+
+        $(window).on('resize', function () {
+            var resizeTimerId;
+
+            clearTimeout(resizeTimerId);
+
+            resizeTimerId = setTimeout(function () {
+                var curWinWidth = $(window).innerWidth();
+
+                if ((curWinWidth < 1200 && winWidth >= 1200) || (curWinWidth >= 1200 && winWidth < 1200)) {
+                    appendPrependMenuMobile();
+                }
+                winWidth = curWinWidth;
+            }, 0);
+        })
+    </script>
+
+  </div>
+</div>
+
+
+<div class="wrapper-container wrapper-body">
+  <main class="main-content" role="main">
+    <!-- BEGIN content_for_index -->
+    <div class="container"><%= yield %></div>
+  </main>
+
+
+  <div id="shopify-section-footer" class="shopify-section">
+
+
+    <footer class="site-footer footer-default" role="contentinfo">
+
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-12 col-md-12 col-lg-6 col-xl-7 footer-col-left">
+              <div class="row">
+
+
+                <div class="col-footer col-12 col-md-4">
+
+
+                  <ul>
+
+                    <li>
+                      <a href="/" title="Home" class="foot-link">
+
+<span>
+  Home
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/start-quiz" title="Shop" class="foot-link">
+
+<span>
+  Shop
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/start-quiz" title="Mattress Quiz" class="foot-link">
+
+<span>
+  Mattress Quiz
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/contact" title="Contact Us" class="foot-link">
+
+<span>
+  Contact Us
+</span>
+
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="col-footer col-12 col-md-4">
+
+
+                  <ul>
+
+                    <li>
+                      <a href="/" title="Home" class="foot-link">
+
+<span>
+  Home
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/start-quiz" title="Shop" class="foot-link">
+
+<span>
+  Shop
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/start-quiz" title="Mattress Quiz" class="foot-link">
+
+<span>
+  Mattress Quiz
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/contact" title="Contact Us" class="foot-link">
+
+<span>
+  Contact Us
+</span>
+
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="col-footer col-12 col-md-4">
+
+
+                  <ul>
+
+                    <li>
+                      <a href="/" title="Home" class="foot-link">
+
+<span>
+  Home
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/start-quiz" title="Shop" class="foot-link">
+
+<span>
+  Shop
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/start-quiz" title="Mattress Quiz" class="foot-link">
+
+<span>
+  Mattress Quiz
+</span>
+
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/pages/contact" title="Contact Us" class="foot-link">
+
+<span>
+  Contact Us
+</span>
+
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="col-12 col-md-12 col-lg-6 col-xl-5 footer-col-right">
+
+              <div class="footer-social">
+
+                <h3 class="social-title foot-title">
+
+<span>
+  Stay Connected
+</span>
+
+                </h3>
+
+
+                <div class="groups-block">
+
+
+                  <ul class="social-icons">
+
+                    <li class="facebook">
+                      <a href="https://www.facebook.com//" title="Facebook" target="_blank">
+
+                        <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
+
+                      </a>
+                    </li>
+
+
+                    <li class="twitter">
+                      <a href="https://twitter.com/" title="Twitter" target="_blank">
+                        <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                      </a>
+                    </li>
+
+
+                    <li class="instagram">
+                      <a href="https://www.instagram.com//" title="Instagram" target="_blank">
+                        <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                      </a>
+                    </li>
+
+
+                    <li class="snapchat">
+                      <a href="https://www.snapchat.com/add/shopify" title="Snapchat" target="_blank">
+                        <i class="fa fa-snapchat-ghost fa-lg" aria-hidden="true"></i>
+                      </a>
+                    </li>
+
+
+                  </ul>
+
+
+                </div>
+              </div>
+
+
+              <div class="footer-newsletter">
+
+                <h3 class="newsletter-title foot-title">
+
+<span>
+  Sign up for our Newsletter
+</span>
+
+                </h3>
+
+                <section class="newsletter">
+                  <div class="block-content">
+
+
+                    <form method="post" action="/contact" id="contact_form" accept-charset="UTF-8" class="input-group">
+                      <input type="hidden" name="form_type" value="customer"/><input type="hidden" name="utf8" value="✓"/>
+                      <input type="hidden" name="contact[tags]" value="newsletter">
+                      <input class="input-group-field" type="email" name="contact[email]" aria-label="Email Address" placeholder="enter your email address" required="required">
+                      <input class="btn" type="submit" value="Submit"></form>
+                  </div>
+                </section>
+
+                <br>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="footer-bottom">
+        <div class="container">
+
+
+          <address>
+
+            <div>
+              © 2019 Snoozze Mattress Store. All Rights Reserved.
+            </div>
+
+
+          </address>
+
+
+        </div>
+      </div>
+
+    </footer>
+
+
+  </div>
+  <div class="footbar-fixed">
+    <div id="shopify-section-someone-purchased" class="shopify-section">
+    </div>
+    <div id="shopify-section-GDPR-modal" class="shopify-section">
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer scripts -->
+<script src="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/vendor.min.js?v=1769586537383445384" defer></script>
+<script src="//cdn.shopify.com/s/assets/themes_support/api.jquery-e94e010e92e659b566dbc436fdfe5242764380e00398907a14955ba301a4749f.js" async></script>
+<script src="//cdn.shopify.com/s/assets/themes_support/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js" async></script>
+<script>
+    window.show_auto_currency = false;
+</script>
+<script src="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/jquery.sticky.js?v=3798168850363400783" defer></script>
+<!-- <script src="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/ella.min.js?267"></script> -->
+<script src="//cdn.shopify.com/s/files/1/0284/9003/9427/t/2/assets/mm.js?v=10715601452997154898"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/template7/1.4.0/template7.js"></script>
+
+<div class="translate-header" data-translate-header>
+  <div id="dropdown-customer" class="ct_login">
+    <div class="customer-title">
+      <a href="javascript:void(0)" title="Close" class="close-customer close">
+        <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+          <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+        </svg>
+        <span>
+        Close
+      </span>
+      </a>
+
+      <h5>
+        Customer Login:
+      </h5>
+
+    </div>
+
+    <div class="customer-content">
+
+      <div class="customer-inner login-customer">
+        <form accept-charset="UTF-8" action="/account/login" method="post">
+          <input name="form_type" type="hidden" value="customer_login"/>
+          <input name="utf8" type="hidden" value="✓"/>
+
+          <div class="ct-login">
+            <div class="form-group">
+              <label for="customer_email">
+              <span>
+                Email Address
+              </span>
+                <em>*</em>
+              </label>
+              <input class="form-control" type="email" value="" name="customer[email]" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+              <label for="customer_password">
+              <span>
+                Password
+              </span>
+                <em>*</em>
+              </label>
+              <input class="form-control" type="password" value="" placeholder="Password" name="customer[password]">
+            </div>
+
+            <div class="action-btn">
+              <input type="submit" class="btn btn-login" value="Login">
+              <a class="text-hover forgot-password" href="/account/login#recover">
+                Forgot your password?
+              </a>
+            </div>
+          </div>
+
+          <div class="ct-register">
+            <a href="/account/register" class="btn btn-register">
+              Create An Account
+            </a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="dropdown-cart">
+    <div class="cart-title">
+      <a href="javascript:void(0)" title="Close" class="close-cart close">
+        <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+          <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+        </svg>
+        <span>
+        Close
+      </span>
+      </a>
+
+      <h5>
+        Shopping Cart:
+      </h5>
+    </div>
+
+    <div class="no-items">
+      <p class="cart_empty">
+        Your cart is currently empty.
+      </p>
+      <div class="text-continue">
+        <a class="btn btn-continue" href="/collection/all">
+          Continue Shopping
+        </a>
+      </div>
+    </div>
+
+    <div class="has-items">
+      <ol class="mini-products-list">
+
+      </ol>
+
+      <div class="summary">
+        <div class="total">
+        <span class="label">
+          <span>
+            Total:
+          </span>
+        </span>
+          <span class="price">
+          $0.00
+        </span>
+        </div>
+      </div>
+
+
+      <div class="checkbox-group">
+        <input class="conditions" type="checkbox" name="conditions">
+        <label>
+<span>
+  I agree with the terms and conditions
+</span>
+        </label>
+      </div>
+      <div class="actions">
+        <button class="btn btn-checkout show" onclick="window.location='/checkout'">
+          Check Out
+        </button>
+        <a class="btn btn-view-cart" href="/cart">
+          View Cart
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade halo_modal-custom" id="size_chart" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h5 class="modal-title">
+
+<span>
+  Size Chart
+</span>
+
+        </h5>
+
+        <a data-dismiss="modal" class="close close-modal" title="Close" href="javascript:void(0)">
+          <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+            <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="modal-body">
+        <div class="size-chart-img">
+
+          <img src="//cdn.shopify.com/s/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_1024x1024.gif" alt="Size Chart"/>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="loading-modal modal">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div class="ajax-lookbook-modal">
+  <div class="overlay"></div>
+  <div class="ajax-modal-content">
+    <a href="javascript:void(0)" data-close-lookbook-modal class="close close-modal">
+      <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+        <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+      </svg>
+    </a>
+    <div class="lookbook-content"></div>
+  </div>
+</div>
+
+<div class="ajax-error-modal modal">
+  <div class="modal-inner">
+    <div class="ajax-error-message"></div>
+  </div>
+</div>
+
+<div class="ajax-success-modal halo-modal" data-ajax-cart-success>
+  <div class="modal-overlay">
+    <div class="halo-modal-content">
+      <a class="close close-modal" title="Close">
+        <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+          <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+        </svg>
+      </a>
+
+      <div class="halo-modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="newsletter-success-modal">
+  <div class="modal-overlay"></div>
+  <div class="halo-modal-content">
+    <a class="close close-modal" title="Close">
+      <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x">
+        <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path>
+      </svg>
+    </a>
+
+    <div class="halo-modal-body">
+      <i class="fa fa-check" aria-hidden="true"></i>
+      <span>You have successfully subscribed!</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="wrapper-overlay"></div>
+
+</body>
 </html>

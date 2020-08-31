@@ -7,6 +7,30 @@ class SignupsController < ApplicationController
     @signups = Signup.all
   end
 
+  def login
+    require 'uri'
+    require 'net/http'
+    require 'openssl'
+    require 'json'
+
+    url = URI("https://api.openpath.com/auth/login")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request["accept"] = 'application/json'
+    request["content-type"] = 'application/json'
+    request.body = "{\"email\":\"jeff@recruiterswebsites.com\",\"password\":\"Placement123\"}"
+
+    @response = http.request(request)
+    puts @response.read_body
+
+    body = JSON.parse(@response.read_body)
+    token = body['data']['token']
+  end
+
   # GET /signups/1
   # GET /signups/1.json
   def show
