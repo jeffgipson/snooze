@@ -45,6 +45,8 @@ class SignupsController < ApplicationController
   # GET /signups/new
   def new
     @signup = Signup.new
+
+
   end
 
   # GET /signups/1/edit
@@ -65,6 +67,26 @@ class SignupsController < ApplicationController
         format.json { render json: @signup.errors, status: :unprocessable_entity }
       end
     end
+
+    require 'uri'
+    require 'net/http'
+    require 'openssl'
+
+    url = URI("https://api.openpath.com/orgs/3240/users")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request["accept"] = 'application/json'
+    request["content-type"] = 'application/json'
+    request["authorization"] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eUlkIjoxMjg5Mjk0LCJybmQiOjAuNDM1NTUwNzIwNTYyMTg4OSwiaWF0IjoxNTk4OTA3MDU2LCJleHAiOjE2MDAxMTY2NTZ9.ap_OhXF64qVVAFrYvsWvIcXqgCPklTU0Cy2M_9vgnZA '
+    request.body = "{\"identity\":{\"email\":\"jeff@yahoo.com\",\"firstName\":\"Jeff\",\"lastName\":\"Gipson\",\"password\":\"password123\"}}"
+
+    @response = http.request(request)
+    # puts @response.read_body
+
   end
 
   # PATCH/PUT /signups/1
