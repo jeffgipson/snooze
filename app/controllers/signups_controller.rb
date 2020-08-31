@@ -8,6 +8,12 @@ class SignupsController < ApplicationController
   end
 
   def login
+  end
+
+  def dashboard
+    @u = params[:username]
+    @p = params[:password]
+
     require 'uri'
     require 'net/http'
     require 'openssl'
