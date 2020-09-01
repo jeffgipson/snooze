@@ -1,6 +1,9 @@
 class SignupsController < ApplicationController
   before_action :set_signup, only: [:show, :edit, :update, :destroy]
 
+  @token = ''
+  @user_id = ''
+
   # GET /signups
   # GET /signups.json
   def index
@@ -34,7 +37,7 @@ class SignupsController < ApplicationController
     puts @response.read_body
 
     body = JSON.parse(@response.read_body)
-    token = body['data']['token']
+    @token = body['data']['token']
   end
 
   # GET /signups/1
@@ -45,8 +48,6 @@ class SignupsController < ApplicationController
   # GET /signups/new
   def new
     @signup = Signup.new
-
-
   end
 
   # GET /signups/1/edit
@@ -58,6 +59,32 @@ class SignupsController < ApplicationController
   def create
     @signup = Signup.new(signup_params)
 
+    # @u = params[:username]
+    # @p = params[:password]
+# Login as SuperAdmin
+    require 'uri'
+    require 'net/http'
+    require 'openssl'
+    require 'json'
+
+    url = URI("https://api.openpath.com/auth/login")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request["accept"] = 'application/json'
+    request["content-type"] = 'application/json'
+    request.body = "{\"email\":\"jeff@recruiterswebsites.com\",\"password\":\"Placement123\"}"
+
+    @response = http.request(request)
+    puts @response.read_body
+
+    body = JSON.parse(@response.read_body)
+    @token = body['data']['token']
+
+# Rails local signup
     respond_to do |format|
       if @signup.save
         format.html { redirect_to @signup, notice: 'Signup was successfully created.' }
@@ -67,7 +94,7 @@ class SignupsController < ApplicationController
         format.json { render json: @signup.errors, status: :unprocessable_entity }
       end
     end
-
+# Create User
     require 'uri'
     require 'net/http'
     require 'openssl'
@@ -81,12 +108,33 @@ class SignupsController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request["accept"] = 'application/json'
     request["content-type"] = 'application/json'
-    request["authorization"] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eUlkIjoxMjg5Mjk0LCJybmQiOjAuNDM1NTUwNzIwNTYyMTg4OSwiaWF0IjoxNTk4OTA3MDU2LCJleHAiOjE2MDAxMTY2NTZ9.ap_OhXF64qVVAFrYvsWvIcXqgCPklTU0Cy2M_9vgnZA '
-    request.body = "{\"identity\":{\"email\":\"jeff@yahoo.com\",\"firstName\":\"Jeff\",\"lastName\":\"Gipson\",\"password\":\"password123\"}}"
-
+    request["authorization"] = @token
+    email = @signup.email
+    first_name = @signup.first_name
+    last_name = @signup.last_name
+    # password = @signup.password
+    request.body = "{\"identity\":{\"email\":\"#{email}\",\"firstName\":\"#{first_name}\",\"lastName\":\"#{last_name}\"}}"
+    # ,\"password\":\"#{password}\"
     @response = http.request(request)
     # puts @response.read_body
+    body = JSON.parse(@response.read_body)
+    @user_id = body['data']['id']
+# Adds user to group
+    require 'uri'
+    require 'net/http'
+    require 'openssl'
 
+    url1 = URI("https://api.openpath.com/orgs/3240/groups/11796/users/#{@user_id}")
+
+    http1 = Net::HTTP.new(url1.host, url1.port)
+    http1.use_ssl = true
+    http1.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request1 = Net::HTTP::Put.new(url1)
+    request1["authorization"] = @token
+
+    response1 = http1.request(request1)
+    puts response1.read_body
   end
 
   # PATCH/PUT /signups/1
