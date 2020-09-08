@@ -1,4 +1,8 @@
-<%  body = JSON.parse(@response.read_body) %>
-<%= @token = body['data']['token'] %>
-<%= @p %>
-<%= @u %>
+<div id="result">
+<% if @response2.code == '204' %>
+  <%= 'Success' %>
+ <% else %>
+  <% 'Error' %>
+  <% end %>
+
+</div>

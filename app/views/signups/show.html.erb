@@ -1,62 +1,145 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @signup.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @signup.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @signup.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @signup.address %>
-</p>
-
-<p>
-  <strong>Address2:</strong>
-  <%= @signup.address2 %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @signup.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @signup.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @signup.zip %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @signup.phone %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @signup.photo_id %>
-</p>
-
-<p>
-  <strong>Selfie:</strong>
-  <%= @signup.selfie %>
-</p>
-
-<%= link_to 'Edit', edit_signup_path(@signup) %> |
-<%= link_to 'Back', signups_path %>
 </div>
 <%= @body %>
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/fe8b25c4e5.js" crossorigin="anonymous"></script>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<hr>
+<div class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-sm-10"><h1><%= @signup.first_name %> <%= @signup.last_name %></h1></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"><!--left col-->
+
+
+      <div class="text-center">
+        <%= image_tag @signup.selfie %>
+      </div></hr><br>
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Drivers License</div>
+        <%= image_tag @signup.photo_id %>
+      </div>
+
+
+
+    </div><!--/col-3-->
+    <div class="col-sm-9">
+
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+          <form class="form" action="##" method="post" id="registrationForm">
+            <div class="form-group">
+
+              <div class="col-xs-6">
+                <label for="first_name"><h4>Email</h4></label>
+                <input type="text" class="form-control" name="email_field" id="email_field" value="<%= @signup.email %>" disabled="disabled">
+              </div>
+            </div>
+            <div class="form-group">
+
+              <div class="col-xs-6">
+                <label for="last_name"><h4>Address</h4></label>
+                <input type="text" class="form-control" name="address_field" id="address_field" value="<%= @signup.address %>" disabled="disabled">
+              </div>
+            </div>
+
+            <div class="form-group">
+
+              <div class="col-xs-6">
+                <label for="phone"><h4>Address 2</h4></label>
+                <input type="text" class="form-control" name="address2_field" id="address2_field" value="<%= @signup.address2 %>" disabled="disabled">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-6">
+                <label for="mobile"><h4>City</h4></label>
+                <input type="text" class="form-control" name="city_field" id="city_field" value="<%= @signup.city %>" disabled="disabled">
+              </div>
+            </div>
+            <div class="form-group">
+
+              <div class="col-xs-6">
+                <label for="email"><h4>State</h4></label>
+                <input type="text" class="form-control" name="state_field" id="state_field" value="<%= @signup.state %>" disabled="disabled">
+              </div>
+            </div>
+            <div class="form-group">
+
+              <div class="col-xs-6">
+                <label for="email"><h4>Zip</h4></label>
+                <input type="text" class="form-control" name="zip_field" id="zip_field" value="<%= @signup.zip %>" disabled="disabled">
+              </div>
+            </div>
+            <div class="form-group">
+
+              <div class="col-xs-6">
+                <label for="password"><h4>Phone</h4></label>
+                <input type="text" class="form-control" name="phone_field" id="phone_field" value="<%= @signup.phone %>" disabled="disabled">
+              </div>
+            </div>
+
+          </form>
+
+          <hr>
+
+        </div><!--/tab-pane-->
+
+      </div><!--/tab-pane-->
+    </div><!--/tab-content-->
+    <button style="margin-right: 10px;" id="unlock_button">Test</button>
+    <i id="success-icon" style="color: lightgreen; display: none" class="fas fa-lock-open-alt fa-2x"></i>
+    <div style="display: none" id="failure">
+      <i style="color: red" class="fas fa-exclamation-triangle fa-2x"></i>
+      Something went wrong
+    </div>
+  </div><!--/col-9-->
+</div><!--/row-->
+
+
+<script>
+
+    $( "#unlock_button" ).click(function() {
+    $.ajax({
+            url: "http://localhost:3000/dashboard",
+            type: 'GET',
+            success: function(res) {
+                var result = $("#result", res)[0].textContent
+                console.log(result);
+                if (result.indexOf('Success') >= 0){
+                    $('#success-icon').show();
+                    $('#success-icon').delay(1000).fadeOut(2000)
+                }
+                else{
+                    $('#failure').show();
+                    $('#failure').delay(1000).fadeOut(2000)
+                }
+            }
+        });
+    })
+
+</script>
