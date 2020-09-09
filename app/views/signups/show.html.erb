@@ -1,4 +1,29 @@
 <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background: #337ab7a3;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> <i id="success-icon" style="color: lightgreen; display: none" class="fas fa-lock-open-alt fa-2x"> <span id="success-text">The Store is now unlocked.</span></i>
+            <div style="display: none" id="failure">
+              <i style="color: red" class="fas fa-exclamation-triangle fa-2x"></i>
+              Something went wrong
+            </div><span id="loading-text">Processing ... </span></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          This is a good place for directions on what to do when the customer goes in the store.
+        </div>
+        <div class="modal-footer">
+          <!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+          <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <p id="notice"><%= notice %></p>
 
 </div>
@@ -15,7 +40,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>Snoozze Mattress Store</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,8 +51,12 @@
 
 <hr>
 <div class="container bootstrap snippet">
-  <div class="row">
-    <div class="col-sm-10"><h1><%= @signup.first_name %> <%= @signup.last_name %></h1></div>
+  <div class="row" style="margin-left: 10px">
+    <div class="col-xs-7"><h1><%= @signup.first_name %> <%= @signup.last_name %></h1></div>
+
+    <div class="col-xs-5">
+      <button type="button" data-toggle="modal" data-target="#exampleModal" class=" unlock btn pull-right" style="margin: 20px;" id="unlock_button">Unlock Door</button>
+    </div>
   </div>
   <div class="row">
     <div class="col-sm-3"><!--left col-->
@@ -111,12 +140,7 @@
 
       </div><!--/tab-pane-->
     </div><!--/tab-content-->
-    <button style="margin-right: 10px;" id="unlock_button">Test</button>
-    <i id="success-icon" style="color: lightgreen; display: none" class="fas fa-lock-open-alt fa-2x"></i>
-    <div style="display: none" id="failure">
-      <i style="color: red" class="fas fa-exclamation-triangle fa-2x"></i>
-      Something went wrong
-    </div>
+
   </div><!--/col-9-->
 </div><!--/row-->
 
@@ -132,14 +156,16 @@
                 console.log(result);
                 if (result.indexOf('Success') >= 0){
                     $('#success-icon').show();
-                    $('#success-icon').delay(1000).fadeOut(2000)
+                    $('#loading-text').hide();
+                    // $('#success-icon').delay(1000).fadeOut(2000)
                 }
                 else{
                     $('#failure').show();
-                    $('#failure').delay(1000).fadeOut(2000)
+                    // $('#failure').delay(1000).fadeOut(2000)
                 }
             }
         });
     })
 
 </script>
+

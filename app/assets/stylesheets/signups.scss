@@ -90,3 +90,18 @@ input:focus{
 .links a{
   margin-left: 4px;
 }
+
+.unlock {
+  margin: 20px;
+  background: #1a3b5a;
+  color: white;
+}
+
+.unlock:hover {
+  background: #fff;
+  color: #1a3b5a;
+  border: 1px solid #1a3b5a;
+}
+#success-text{
+  color: #000;
+}
