@@ -23,6 +23,11 @@
 
   <tbody>
 <% @signups.each do |signup| %>
+    <% created_ago = (Time.now - signup.created_at) / 1.hours %>
+
+    <% if created_ago.round > 24 %>
+     <% next %>
+  <% end %>
       <tr>
         <td><%= signup.first_name %></td>
         <td><%= signup.last_name %></td>
@@ -46,3 +51,4 @@
 <br>
 
 <%= link_to 'New Signup', new_signup_path %>
+<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
