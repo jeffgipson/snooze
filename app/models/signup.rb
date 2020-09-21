@@ -6,11 +6,11 @@ class Signup < ApplicationRecord
   def acceptable_image
     return unless selfie.attached?
 
-    unless selfie.byte_size <= 1.megabyte
+    unless selfie.byte_size <= 5.megabyte
       errors.add(:selfie, "is too big")
     end
 
-    unless photo_id.byte_size <= 1.megabyte
+    unless photo_id.byte_size <= 5.megabyte
       errors.add(:photo_id, "is too big")
     end
 

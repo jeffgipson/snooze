@@ -1,5 +1,6 @@
 class SignupsController < ApplicationController
   before_action :set_signup, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   @token = ''
   @user_id = ''
