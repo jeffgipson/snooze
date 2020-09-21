@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18d34f0f-8e52-4764-b75e-11ed7b48830f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/signups_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/signups_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/signup.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/signup.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signups/dashboard.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signups/dashboard.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signups/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signups/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signups/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signups/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -325,16 +317,15 @@
       <updated>1598647321885</updated>
       <workItem from="1598647323066" duration="1734000" />
       <workItem from="1598649307626" duration="17300000" />
-      <workItem from="1599073535607" duration="18613000" />
+      <workItem from="1599073535607" duration="19993000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37647000" />
+    <option name="totallyTimeSpent" value="39027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1935" y="23" width="1905" height="992" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13794954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -349,7 +340,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33333334" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22444445" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3289256" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
