@@ -1,7 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<% if current_user.admin.defined? %>
+<% if defined? current_user.admin %>
   <script type="text/javascript">
       window.location.href="/signups/new"
   </script>
