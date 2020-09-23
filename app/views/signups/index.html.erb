@@ -3,7 +3,7 @@
 
 <% if current_user.admin.empty? %>
   <script type="text/javascript">
-      window.location.href="/signups/new"  // put your correct path in a string here
+      window.location.href="/signups/new"
   </script>
 <% end %>
 <h1>Signups</h1>
@@ -43,8 +43,8 @@
         <td><%= signup.state %></td>
         <td><%= signup.zip %></td>
         <td><%= signup.phone %></td>
-        <td><%= signup.photo_id %></td>
-        <td><%= signup.selfie %></td>
+        <td><%= image_tag(signup.photo_id, style: 'width:100px') if signup.selfie.attached? %></td>
+        <td><%= image_tag(signup.selfie, style: 'width:100px') if signup.photo_id.attached? %></td>
         <td><%= link_to 'Show', signup %></td>
         <td><%= link_to 'Edit', edit_signup_path(signup) %></td>
         <td><%= link_to 'Destroy', signup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
