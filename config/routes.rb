@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'signups#index'
   # get 'login', to: 'signups#login'
   get 'dashboard', to: 'signups#dashboard'
+  get 'all-signups', to: 'signups#all_signups'
   #match '/users/sign_up', :to => "devise/sessions#new", :via => [:get, :post]
 
   devise_scope :user do

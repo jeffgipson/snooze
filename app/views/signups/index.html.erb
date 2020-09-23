@@ -1,6 +1,11 @@
 
 <p id="notice"><%= notice %></p>
 
+<% if current_user.admin.empty? %>
+  <script type="text/javascript">
+      window.location.href="/signups/new"  // put your correct path in a string here
+  </script>
+<% end %>
 <h1>Signups</h1>
 
 <table>
@@ -25,9 +30,9 @@
 <% @signups.each do |signup| %>
     <% created_ago = (Time.now - signup.created_at) / 1.hours %>
 
-    <% if created_ago.round > 24 %>
-     <% next %>
-  <% end %>
+    <% #if created_ago.round > 24 %>
+     <% #next %>
+  <% #end %>
       <tr>
         <td><%= signup.first_name %></td>
         <td><%= signup.last_name %></td>

@@ -11,6 +11,11 @@ class SignupsController < ApplicationController
     @signups = Signup.all
   end
 
+
+  def all_signups
+    @signups = Signup.all
+  end
+
   def login
   end
 
@@ -58,7 +63,7 @@ class SignupsController < ApplicationController
     request1 = Net::HTTP::Post.new(url1)
     request1["accept"] = 'application/json'
     request1["content-type"] = 'application/json'
-    request1["authorization"] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eUlkIjoxMjg5Mjk0LCJybmQiOjAuMjEyNDIxMjQ3ODI1MTYzNywiaWF0IjoxNTk5MTQ5NjE0LCJleHAiOjE2MDAzNTkyMTR9.4rkgZuLtwv5Kh3UlCecLWTccppjcl-_vHuOG7DJnAHE'
+    request1["authorization"] = @token
     request1.body = "{\"entryData\":[{\"entryId\":#{entry_id}}]}"
 
     response1 = http1.request(request1)
@@ -212,6 +217,6 @@ class SignupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def signup_params
-      params.require(:signup).permit(:first_name, :last_name, :email, :address, :address2, :city, :state, :zip, :phone, :photo_id, :selfie)
+      params.require(:signup).permit(:first_name, :last_name, :email, :address, :address2, :city, :state, :zip, :phone, :photo_id, :selfie, :user_id).merge(user_id: current_user.id)
     end
 end
