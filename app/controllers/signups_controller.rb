@@ -125,8 +125,8 @@ class SignupsController < ApplicationController
 
     # Your Account Sid and Auth Token from twilio.com/console
     # DANGER! This is insecure. See http://twil.io/secure
-    account_sid = 'AC53de1f669a8b8b4c2d3e9d88913e0be4'
-    auth_token = '7d814da7ee858d406cf296400c0458e4'
+    account_sid = ENV['TWILIO_SID']
+    auth_token = ENV['TWILIO_TOKEN']
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
     message = client.messages
