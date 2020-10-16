@@ -218,7 +218,7 @@ class SignupsController < ApplicationController
   def update
     respond_to do |format|
       if @signup.update(signup_params)
-        format.html { redirect_to @signup, notice: 'Signup was successfully updated.' }
+        format.html { redirect_to @signup, notice: 'Mobile Phone Verified.' }
         format.json { render :show, status: :ok, location: @signup }
       else
         format.html { render :edit }
@@ -245,6 +245,6 @@ class SignupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def signup_params
-      params.require(:signup).permit(:first_name, :last_name, :email, :address, :address2, :city, :state, :zip, :phone, :photo_id, :selfie, :user_id, :location_id).merge(user_id: current_user.id)
+      params.require(:signup).permit(:first_name, :last_name, :verified, :email, :address, :address2, :city, :state, :zip, :phone, :photo_id, :selfie, :user_id, :location_id).merge(user_id: current_user.id)
     end
 end

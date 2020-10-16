@@ -455,3 +455,11 @@
         display: none;
     }
 }
+
+a:hover {
+    background-color: transparent;
+}
+
+.footer-top .container {
+    width: 100%;
+}

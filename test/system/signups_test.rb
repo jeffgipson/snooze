@@ -48,7 +48,7 @@ class SignupsTest < ApplicationSystemTestCase
     fill_in "Zip", with: @signup.zip
     click_on "Update Signup"
 
-    assert_text "Signup was successfully updated"
+    assert_text "Mobile phone has been verified"
     click_on "Back"
   end
 

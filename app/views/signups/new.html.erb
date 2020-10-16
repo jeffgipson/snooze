@@ -1,54 +1,230 @@
-<div class="container">
+<!--<div class="container">-->
 <h1>New Signup</h1>
 
 <%#= render 'form', signup: @signup %>
 
-  <%= form_for @signup do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <%#= form_for @signup do |f| %>
+    <%#= f.label :first_name %>
+    <%#= f.text_field :first_name %>
 
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%#= f.label :last_name %>
+    <%#= f.text_field :last_name %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%#= f.label :email %>
+    <%#= f.text_field :email %>
 
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%#= f.label :address %>
+    <%#= f.text_field :address %>
 
-    <%= f.label :address2 %>
-    <%= f.text_field :address2 %>
+    <%#= f.label :address2 %>
+    <%#= f.text_field :address2 %>
 
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+    <%#= f.label :city %>
+    <%#= f.text_field :city %>
 
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+    <%#= f.label :state %>
+    <%#= f.text_field :state %>
 
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
+    <%#= f.label :zip %>
+    <%#= f.text_field :zip %>
 
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-    <br>
-    <%= f.collection_select(:location_id, Location.all, :id, :name) %>
+    <%#= f.label :phone %>
+    <%#= f.text_field :phone %>
+<!--    <br>-->
+    <%#= f.collection_select(:location_id, Location.all, :id, :name) %>
 
-    <br>
+<!--    <br>-->
 
-    <%= f.label :selfie %>
-    <%= f.file_field :selfie %>
-    <br>
-    <br>
-    <%= f.label :photo_id %>
-    <%= f.file_field :photo_id %>
-    <br>
-    <br>
+    <%#= f.label :selfie %>
+    <%#= f.file_field :selfie %>
+<!--    <br>-->
+<!--    <br>-->
+    <%#= f.label :photo_id %>
+    <%#= f.file_field :photo_id %>
+<!--    <br>-->
+<!--    <br>-->
 
-    <%= f.submit  %>
-  <% end %>
+    <%#= f.submit  %>
+  <%# end %>
 
 
-<%= link_to 'Back', signups_path %>
-</div>
-<%= @body %>
-<%= @token %>
+<%#= link_to 'Back', signups_path %>
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/fe8b25c4e5.js" crossorigin="anonymous"></script>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+  <title>Snoozze Mattress Store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<hr>
+
+
+  <div class="container bootstrap snippet">
+    <div class="row">
+
+      <div class="col-sm-12">
+
+
+
+            <%= form_for @signup do |form| %>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="first_name"><h4>First Name</h4></label>
+              <%= form.text_field :first_name %>
+
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="last_name"><h4>Last Name</h4></label>
+              <%= form.text_field :last_name %>
+
+            </div>
+          </div>
+
+
+              <div class="form-group">
+
+                <div class="col-xs-6">
+                  <label for="first_name"><h4>Email</h4></label>
+                  <%= form.text_field :email %>
+
+                </div>
+              </div>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="password"><h4>Mobile Phone</h4></label>
+              <%= form.text_field :phone %>
+
+            </div>
+          </div>
+              <div class="form-group">
+
+                <div class="col-xs-6">
+                  <label for="last_name"><h4>Address</h4></label>
+                  <%= form.text_field :address %>
+
+                </div>
+              </div>
+
+              <div class="form-group">
+
+                <div class="col-xs-6">
+                  <label for="phone"><h4>Address 2</h4></label>
+                  <%= form.text_field :address2 %>
+
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-xs-6">
+                  <label for="mobile"><h4>City</h4></label>
+                  <%= form.text_field :city %>
+
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="col-xs-6">
+                  <label for="email"><h4>State</h4></label>
+                  <%= form.text_field :state %>
+
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="col-xs-6">
+                  <label for="email"><h4>Zip</h4></label>
+                  <%= form.text_field :zip %>
+
+                </div>
+              </div>
+
+
+              <div class="form-group">
+
+                <div class="col-xs-6">
+                  <label for="password"><h4>Store Location</h4></label>
+                  <%= form.collection_select(:location_id, Location.all, :id, :name) %>
+                  <p style="visibility: hidden">test</p>
+                </div>
+              </div>
+
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="selfie"><h4>Selfie</h4></label>
+              <%= form.file_field :selfie %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="license"><h4>Drivers License</h4></label>
+              <%= form.file_field :photo_id %>
+
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+            <h4 style="visibility: hidden"></h4>
+          <div id="form-submit"  class="actions">
+            <%= form.submit %>
+          </div>
+
+          </div>
+          </div>
+
+
+
+
+            <% end %>
+
+
+            <hr>
+
+          </div><!--/tab-pane-->
+
+
+
+    </div><!--/col-9-->
+  </div><!--/row-->
+<%#end %>
+
+
+
+<style>
+
+  #signup_location_id{
+    width: 83%;
+  }
+
+</style>
+
