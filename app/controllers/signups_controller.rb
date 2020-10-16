@@ -2,6 +2,7 @@ class SignupsController < ApplicationController
   before_action :set_signup, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+
   @token = ''
   @user_id = ''
 
@@ -28,10 +29,10 @@ class SignupsController < ApplicationController
     require 'openssl'
     require 'json'
 
-    org_id = 3240
-    user_id = 1287178
-    cred_id = 644272
-    entry_id = 15423
+    org_id = params[:org]
+    user_id = params[:user]
+    cred_id = params[:cred]
+    entry_id = params[:entry]
 
     url = URI("https://api.openpath.com/auth/login")
 
@@ -87,6 +88,10 @@ class SignupsController < ApplicationController
 
 
 
+
+
+
+
   end
 
   # GET /signups/1
@@ -107,6 +112,29 @@ class SignupsController < ApplicationController
   # POST /signups.json
   def create
     @signup = Signup.new(signup_params)
+
+    code = rand(10000...99999)
+
+
+    @signup.update_attributes(:code => code)
+    @signup.save
+
+    require 'twilio-ruby'
+
+
+
+    # Your Account Sid and Auth Token from twilio.com/console
+    # DANGER! This is insecure. See http://twil.io/secure
+    account_sid = 'AC53de1f669a8b8b4c2d3e9d88913e0be4'
+    auth_token = '7d814da7ee858d406cf296400c0458e4'
+    client = Twilio::REST::Client.new(account_sid, auth_token)
+
+    message = client.messages
+                  .create(
+                      body: "Your Snoozze verifcation code is #{code}",
+                      from: '+16266189226',
+                      to: "+1#{@signup.phone}"
+                  )
 
 
 # Login as SuperAdmin
@@ -217,6 +245,6 @@ class SignupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def signup_params
-      params.require(:signup).permit(:first_name, :last_name, :email, :address, :address2, :city, :state, :zip, :phone, :photo_id, :selfie, :user_id).merge(user_id: current_user.id)
+      params.require(:signup).permit(:first_name, :last_name, :email, :address, :address2, :city, :state, :zip, :phone, :photo_id, :selfie, :user_id, :location_id).merge(user_id: current_user.id)
     end
 end

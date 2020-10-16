@@ -63,7 +63,8 @@
     <div class="col-xs-7"><h1><%= @signup.first_name %> <%= @signup.last_name %></h1></div>
 
     <div class="col-xs-5">
-      <div data-toggle="modal" data-target="#exampleModal" class=" unlock btn pull-right" style="margin: 20px;" id="unlock_button">Unlock Door</div>
+      <input id="verify">
+      <button data-toggle="modal" disabled="disabled" data-target="#exampleModal" class=" unlock btn pull-right" style="margin: 20px;" id="unlock_button">Unlock Door</button>
     </div>
     <%= "There are  #{24 - created_ago.round} hours left in your session" %>
   </div>
@@ -143,6 +144,14 @@
               </div>
             </div>
 
+            <div class="form-group">
+
+              <div class="col-xs-6">
+                <label for="password"><h4>Location</h4></label>
+                <input type="text" class="form-control" name="phone_field" id="phone_field" value="<%= Location.find(@signup.location_id).name %>" disabled="disabled">
+              </div>
+            </div>
+
 
           </form>
 
@@ -158,6 +167,8 @@
   <%end %>
 
 
+
+
 <script>
     $( "#close" ).click(function() {
         $("#profile-img").click()
@@ -166,7 +177,7 @@
 
     $( "#unlock_button" ).click(function() {
     $.ajax({
-            url: "<%= request.base_url %>/dashboard",
+            url: "<%= request.base_url %>/dashboard?code=<%= @signup.code %>&org=<%= Location.find(@signup.location_id).org_id %>&user=<%= Location.find(@signup.location_id).user_id %>&cred=<%= Location.find(@signup.location_id).cred_id %>&entry=<%= Location.find(@signup.location_id).entry_id %>",
             type: 'GET',
             success: function(res) {
                 var result = $("#result", res)[0].textContent
@@ -182,7 +193,14 @@
                 }
             }
         });
-    })
+    });
+
+    $("#verify").on("input", function() {
+      if (jQuery('#verify').val() == <%= @signup.code %>){
+          document.getElementById("unlock_button").disabled = false;
+      }
+    });
+
 
 </script>
 

@@ -30,12 +30,19 @@
 
     <%= f.label :phone %>
     <%= f.text_field :phone %>
+    <br>
+    <%= f.collection_select(:location_id, Location.all, :id, :name) %>
+
+    <br>
 
     <%= f.label :selfie %>
     <%= f.file_field :selfie %>
-
+    <br>
+    <br>
     <%= f.label :photo_id %>
     <%= f.file_field :photo_id %>
+    <br>
+    <br>
 
     <%= f.submit  %>
   <% end %>
