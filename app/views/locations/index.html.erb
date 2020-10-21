@@ -33,7 +33,7 @@
 <br>
 
 <%= link_to 'New Location', new_location_path %>
-<% if defined? current_user.admin %>
+<% if current_user.admin != 'yes' %>
   <script type="text/javascript">
       window.location.href="/signups/new"
   </script>

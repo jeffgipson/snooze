@@ -27,7 +27,7 @@
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
-<% if defined? current_user.admin %>
+<% if current_user.admin != 'yes' %>
   <script type="text/javascript">
       window.location.href="/signups/new"
   </script>
