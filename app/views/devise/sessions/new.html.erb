@@ -1,9 +1,106 @@
+<div id="shopify-section-collection-header" class="shopify-section"><header class="collection-header collection-header-sections">
+
+
+
+
+  <div class="collection-image">
+
+
+
+    <img data-src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/Snoozze-Mattress-Display.jpg?v=1600721593" src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/Snoozze-Mattress-Display.jpg?v=1600721593" class="lazyautosizes lazyloaded" data-sizes="auto" sizes="1920px">
+
+
+
+
+    <div class="page-header tab-abs">
+      <h1>
+
+<span>
+  Sign In
+</span>
+
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="collection-wrapper page-header">
+    <div class="container-padd60">
+      <h1>
+
+<span>
+ Sign In
+</span>
+
+      </h1>
+
+
+    </div>
+  </div>
+</header>
+
+  <style>
+    .collection-header-sections img {
+      max-height: 240px;
+    }
+
+
+    @media (min-width: 768px) {
+      .collection-header-sections .page-header h1 {
+        color: #fff;
+      }
+    }
+
+
+    @media (min-width: 1200px) {
+
+      .collection-header-sections .collection-des {
+        color: #fff;
+      }
+
+      .collection-header.collection-header-sections {
+        position: relative;
+      }
+
+      .collection-header.collection-header-sections .collection-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 0;
+      }
+
+      .collection-header.collection-header-sections .collection-image {
+        margin-bottom: 1px;
+      }
+
+
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+
+      .collection-header.collection-header-sections .collection-wrapper h1 {
+        display: none !important;
+      }
+
+    }
+  </style>
+
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-sm">
     </div>
     <div class="col-sm">
-
+<center>
 <div id="formContent">
   <h2>Log in</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -27,15 +124,109 @@
   </div>
 
 <% end %>
-
       <div id="formFooter">
         <%= render "devise/shared/links" %>
       </div>
 </div>
+</center>
+
     </div>
     <div class="col-sm">
     </div>
 </div>
+</div>
+
+
+<div class="home-custom-block" id="custom-block-1600894732641">
+  <div class="container-fluid">
+
+
+    <div class="row">
+
+
+
+      <div class="col-12 no-padd">
+        <div class="custom-block-banner banner-large-img">
+          <div class="img-box">
+            <a href="/pages/contact">
+
+
+              <img data-src="//cdn.shopify.com/s/files/1/0284/9003/9427/files/Snoozze-Mattress-Display.jpg?v=1600721593" src="https://cdn.shopify.com/s/files/1/0284/9003/9427/files/Snoozze-Mattress-Display.jpg?v=1600721593" alt="Snoozze" itemprop="logo" class="lazyautosizes lazyloaded" data-sizes="auto">
+
+            </a>
+
+
+          </div>
+
+
+          <div class="banner-content inner abs_center">
+
+            <h2 class="banner-heading" style="
+            font-size: 40px;
+
+
+                color:#232323;
+            ">
+              <span class="line" style="background-color: #232323;"></span>
+
+              <span>
+  <h6 style="font-size: 18px; margin-bottom: 0;">You don’t want to take our word for it. It’s fine. We get it. </h6>We have a store. No. Really. We do.
+</span>
+
+            </h2>
+
+
+
+            <p class="banner-des" style="
+            font-size: 14px;
+
+
+                color: #232323;
+            ">
+
+<span>
+  Bring a photo ID and visit our store. We’re never closed!<br>
+Crazy, right! But don’t be weird. We have cameras.
+</span>
+
+            </p>
+
+
+
+
+
+            <a href="/pages/contact" class="banner-button btn" style="
+            background-color:#232323;
+
+
+                border-color:#232323;
+
+
+                color:#ffffff;
+
+
+                min-width:237px;
+            ">
+
+<span>
+  Get Directions
+</span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+  </div>
 </div>
 
 
@@ -97,6 +288,8 @@
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
   #formFooter {
@@ -306,5 +499,11 @@
   #icon {
     width:60%;
   }
+
+    .banner-content{
+      background: rgba(255,255,255,.8);
+      padding: 80px 60px;
+      width: 60%;
+    }
 
 </style>
