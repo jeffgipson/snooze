@@ -6,7 +6,8 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Mobile Phone Verification</h5>
       </div>
       <div class="modal-body">
-        Verification Code:
+        <h6>We have sent a confirmation code to <%= @signup.phone %>.</h6>
+        Enter Code:
         <input id="verify">
       </div>
       <div class="modal-footer">
@@ -77,8 +78,11 @@
 
 
 <div class="container bootstrap snippet">
+  <center>
   <h2> Welcome to <%= Location.find(@signup.location_id).name %> Snoozze Mattress Store </h2>
   <p>Use the unlock button on the right to unlock the front door. Your session will expire in <%=  24 - created_ago.round  %> hours. After that you will need to re-register.</p>
+  </center>
+  <hr>
   <div class="row" style="margin-left: 10px">
     <div class="col-xs-7"><h1><%= @signup.first_name %> <%= @signup.last_name %></h1></div>
 
@@ -173,8 +177,8 @@
             <div class="form-group">
 
               <div class="col-xs-6">
-                <label for="password"><h4>Location</h4></label>
-                <%= form.text_field :location_id, :disabled => true , :value => Location.find(@signup.location_id).name %>
+                <label for="password"><h4>Store Location</h4></label>
+                <%= form.collection_select(:location_id, Location.all, :id, :name) %>
 
               </div>
             </div>
