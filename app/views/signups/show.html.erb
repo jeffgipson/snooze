@@ -177,9 +177,10 @@
             <div class="form-group">
 
               <div class="col-xs-6">
-                <label for="password"><h4 id="change_loc">Store Location <span style="color: blue">(Change)</span></h4></label>
+                <label for="password"><h4> Store Location</h4></label>
+                <div class="dropdown">
                 <%= form.collection_select(:location_id, Location.all, :id, :name) %>
-
+                </div>
               </div>
             </div>
 
@@ -252,9 +253,6 @@
     });
       <% end %>
 
-    $( "#change_loc" ).click(function() {
-        $("#signup_location_id").click()
-    });
 
 
 </script>
@@ -264,25 +262,32 @@
     margin-top: 10px;
   }
 
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  .dropdown {
+    position: relative;
   }
 
-  select:after {
+  .dropdown:before {
     content: "";
     position: absolute;
-    z-index: 2;
-    right: 8px;
-    top: 50%;
-    margin-top: -3px;
-    height: 0;
+    right: 10px;
+    top: 8px;
     width: 0;
-    border-top: 6px solid #f99300;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    pointer-events: none;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f00;
+  }
+
+  .dropdown:after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #333;
   }
 
 </style>
