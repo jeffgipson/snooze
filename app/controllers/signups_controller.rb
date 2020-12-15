@@ -43,7 +43,7 @@ class SignupsController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request["accept"] = 'application/json'
     request["content-type"] = 'application/json'
-    request.body = "{\"email\":\"jeff@recruiterswebsites.com\",\"password\":\"Placement123\"}"
+    request.body = "{\"email\":\"vladimir@recruiterswebsites.com\",\"password\":\"Placement123\"}"
 
    @response = http.request(request)
     puts @response.read_body
