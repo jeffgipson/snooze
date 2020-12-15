@@ -177,7 +177,7 @@
             <div class="form-group">
 
               <div class="col-xs-6">
-                <label for="password"><h4>Store Location</h4></label>
+                <label for="password"><h4 id="change_loc">Store Location <span style="color: blue">(Change)</span></h4></label>
                 <%= form.collection_select(:location_id, Location.all, :id, :name) %>
 
               </div>
@@ -251,6 +251,10 @@
         document.getElementById("unlock_button").disabled = false;
     });
       <% end %>
+
+    $( "#change_loc" ).click(function() {
+        $("#signup_location_id").click()
+    });
 
 
 </script>
