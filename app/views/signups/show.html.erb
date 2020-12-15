@@ -178,7 +178,7 @@
 
               <div class="col-xs-6">
                 <label for="password"><h4> Store Location</h4></label>
-                <div class="dropdown">
+                <div class="location_dropdown">
                 <%= form.collection_select(:location_id, Location.all, :id, :name) %>
                 </div>
               </div>
@@ -262,13 +262,13 @@
     margin-top: 10px;
   }
 
-  .dropdown {
+  .location_dropdown {
     position: relative;
   }
 
 
 
-  .dropdown:after {
+  .location_dropdown:after {
     content: "";
     position: absolute;
     right: 10px;
