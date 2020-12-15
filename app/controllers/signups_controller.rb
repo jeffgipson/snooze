@@ -131,7 +131,7 @@ class SignupsController < ApplicationController
 
     message = client.messages
                   .create(
-                      body: "Your Snoozze verifcation code is #{code}",
+                      body: "Welcome to Snoozze Mattress after hours access. Your verification code is #{code}. \n Once verified use the unlock door button to start shopping.",
                       from: '+16266189226',
                       to: "+1#{@signup.phone}"
                   )
